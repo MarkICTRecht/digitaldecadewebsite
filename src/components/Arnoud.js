@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const Arnoud = ({ popupText }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setPopupPosition({
+        top: rect.top - 10, // Boven de knop openen
+        left: rect.left + rect.width / 2, // Midden boven de knop centreren
+      });
+    }
+  }, [isOpen]);
 
   const closePopup = () => setIsOpen(false);
 
@@ -9,6 +21,7 @@ const Arnoud = ({ popupText }) => {
     <div style={{ position: 'relative', display: 'inline-block' }}>
       {/* Klikbare afbeelding */}
       <span
+        ref={buttonRef}
         onClick={() => setIsOpen(true)}
         style={{
           backgroundImage: "url(/img/arnoud.png)",
@@ -42,9 +55,9 @@ const Arnoud = ({ popupText }) => {
             onClick={(e) => e.stopPropagation()} // Voorkomt sluiten bij klikken binnen de popup
             style={{
               position: 'absolute',
-              bottom: '50px',
-              left: '50%',
-              transform: 'translateX(-50%)',
+              top: `${popupPosition.top}px`, // Dynamische top-positie
+              left: `${popupPosition.left}px`, // Dynamische linkerpositie
+              transform: 'translate(-50%, -100%)', // Popup uitlijnen boven de knop
               backgroundColor: 'white',
               color: 'black',
               padding: '15px 20px',

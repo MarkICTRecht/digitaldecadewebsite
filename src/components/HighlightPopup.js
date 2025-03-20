@@ -34,13 +34,13 @@ const HighlightPopup = ({ children, color, content, type = 'text' }) => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: 'auto',
-            maxWidth: '80%',
-            height: 'auto',
-            maxHeight: '80%',
+            width: '90vw', // Groter breedte
+            maxWidth: '1200px', // Maximum breedte voor grote schermen
+            height: '80vh', // Meer hoogte
+            maxHeight: '90vh',
             padding: '10px',
             borderRadius: '10px',
-            overflow: 'auto', // Zorgt ervoor dat de popup kan scrollen
+            overflow: 'hidden', // Voorkomt onnodige scrollbars
           },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -68,18 +68,21 @@ const HighlightPopup = ({ children, color, content, type = 'text' }) => {
         <div style={{ 
           padding: '10px',
           margin: '5px 0',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }}>
           {type === 'iframe' && (
             <iframe
               src={content}
               width="100%"
-              height="400px"
-              style={{ border: 'none' }}
+              height="600px" // Grotere hoogte voor betere zichtbaarheid
+              style={{ border: 'none', flexGrow: 1 }}
             />
           )}
           
           {type === 'text' && (
-            <div>{content}</div>
+            <div style={{ overflowY: 'auto', flexGrow: 1 }}>{content}</div>
           )}
         </div>
       </Modal>
