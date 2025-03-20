@@ -1,8 +1,0 @@
-import DynamicPopup from '@site/src/components/DynamicPopup';
-
-
-Klik op de knoppen hieronder om artikelen te bekijken:
-
-- <DynamicPopup page="/docs/Wetgevingen/NIS2/Artikel14">Bekijk Artikel 14</DynamicPopup>
-- <DynamicPopup page="/docs/Wetgevingen/AI Act/Artikel1">Bekijk Artikel 1</DynamicPopup>
-- <DynamicPopup page="/docs/Wetgevingen/AI Act/Artikel2">Bekijk Artikel 2</DynamicPopup>

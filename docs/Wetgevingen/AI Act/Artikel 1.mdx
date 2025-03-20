@@ -75,14 +75,9 @@ import Artikel14 from '@site/docs/Wetgevingen/NIS2/Artikel 14.mdx';
 
 ##Test
 
-import Popup from '@site/src/components/Popup';
+import HighlightPopup from '@site/src/components/HighlightPopup';
 
-
-Klik op de knop hieronder om een popup te openen:
-
-<Popup title="Belangrijke Informatie" content="Dit is de inhoud van de popup.">
-  Open Popup
-</Popup>
+<HighlightPopup color="#25c2a0" text="test">NIS2: Artikel 14</HighlightPopup>
 
 import DynamicPopup from '@site/src/components/DynamicPopup';
 
@@ -93,14 +88,12 @@ Klik op de knoppen hieronder om artikelen te bekijken:
 - <DynamicPopup page="/docs/Wetgevingen/AI Act/Artikel1">Bekijk Artikel 1</DynamicPopup>
 - <DynamicPopup page="/docs/Wetgevingen/AI Act/Artikel2">Bekijk Artikel 2</DynamicPopup>
 
-import HighlightPopup from '@site/src/components/HighlightPopup';
-
 # Wetgevingen en Artikelen
 
 Klik op een knop om de inhoud te bekijken in een popup:
 
-- <HighlightPopup color="#25c2a0" page="/docs/Wetgevingen/NIS2/Artikel%2014">NIS2: Artikel 14</HighlightPopup>
-- <HighlightPopup color="#1877F2" page="http://localhost:3000/docs/Wetgevingen/AI%20Act/Artikel%202">AI Act: Artikel 1</HighlightPopup>
+<HighlightPopup color="#25c2a0" page="/docs/Wetgevingen/NIS2/Artikel%2014">NIS2: Artikel 14</HighlightPopup>
+<HighlightPopup color="#1877F2" page="http://localhost:3000/docs/Wetgevingen/AI%20Act/Artikel%202">AI Act: Artikel 1</HighlightPopup>
 
 ## Hovertest
 
@@ -109,3 +102,24 @@ import HoverTooltip from '@site/src/components/HoverTooltip';
 Hier is een juridische term: <HoverTooltip text="Wetgevingsartikel" tooltipContent="Dit artikel regelt de aansprakelijkheid van partijen." id="tooltip1" />.
 
 Je kunt het meerdere keren per pagina gebruiken: <HoverTooltip text="AVG" tooltipContent="De Algemene Verordening Gegevensbescherming." id="tooltip2" />.
+
+
+
+<HighlightPopup 
+  color="#25c2a0" 
+  type="iframe"
+  content="http://localhost:3000/docs/Wetgevingen/AI%20Act/Artikel%202"
+> Klik voor website </HighlightPopup>
+
+
+<HighlightPopup 
+  color="#1877F2" 
+  type="text"
+  content={<p>Dit is een voorbeeld van platte tekst die wordt weergegeven in de popup.</p>}
+> Klik voor tekst </HighlightPopup>
+
+import Arnoud from '@site/src/components/Arnoud';
+
+<Arnoud popupText="Hoi!" />
+
+
