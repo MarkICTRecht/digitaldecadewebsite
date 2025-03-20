@@ -1,0 +1,8 @@
+import Popup from '@site/src/components/Popup';
+
+
+Klik op de knop hieronder om een popup te openen:
+
+<Popup title="Belangrijke Informatie" content="Dit is de inhoud van de popup.">
+  Open Popup
+</Popup>

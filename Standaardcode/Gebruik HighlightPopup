@@ -1,0 +1,8 @@
+import HighlightPopup from '@site/src/components/HighlightPopup';
+
+# Wetgevingen en Artikelen
+
+Klik op een knop om de inhoud te bekijken in een popup:
+
+- <HighlightPopup color="#25c2a0" page="/docs/Wetgevingen/NIS2/Artikel14">NIS2: Artikel 14</HighlightPopup>
+- <HighlightPopup color="#1877F2" page="/docs/Wetgevingen/AI Act/Artikel1">AI Act: Artikel 1</HighlightPopup>
