@@ -40,7 +40,7 @@ const HighlightPopup = ({ children, color, content, type = 'text' }) => {
             maxHeight: '80%',
             padding: '10px',
             borderRadius: '10px',
-            overflow: 'hidden',
+            overflow: 'auto', // Zorgt ervoor dat de popup kan scrollen
           },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -51,13 +51,13 @@ const HighlightPopup = ({ children, color, content, type = 'text' }) => {
           onClick={() => setModalIsOpen(false)}
           style={{
             position: 'absolute',
-            top: '5px',
-            right: '5px',
-            fontSize: '0.8rem',
+            top: '10px',
+            right: '10px',
+            fontSize: '1.5rem', // Groter kruisje
             border: 'none',
             background: 'none',
             cursor: 'pointer',
-            padding: '0',
+            padding: '5px',
             lineHeight: '1',
             zIndex: 10,
           }}
@@ -66,7 +66,7 @@ const HighlightPopup = ({ children, color, content, type = 'text' }) => {
         </button>
         
         <div style={{ 
-          padding: '5px',
+          padding: '10px',
           margin: '5px 0',
         }}>
           {type === 'iframe' && (
